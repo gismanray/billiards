@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Billiards</title>
+<style type="text/css">
+.ball { position:absolute; border-radius:50%; font-family:arial; font-size:10pt; text-align:center; color:red; }
+.b1 {
+  background: radial-gradient(circle at 65% 25%, white 1px, white 3%, darkgray 60%, gray 100%);  
+}
+.b2 {
+  background: radial-gradient(circle at 65% 25%, white 1px, aqua 3%, darkblue 60%, aqua 100%);  
+}
+.b3 {
+  background: radial-gradient(circle at 65% 25%, white 1px, pink 3%, #660000 60%, pink 100%);  
+}
+.lnk { color:blue; cursor:pointer; }
+.lnk:hover { color:red; }
+#table { position:absolute; top:75px; left:150px; width:977px; height:547px;}
+#box { position:absolute; top:133px; left:208px; width:860px; height:430px; border:0px solid red; visibility:visible; }
+#canvas { position:absolute; left:0px; top:0px; border:0px solid #ffd3d3; }
+#clock { position:absolute; right:80px; top:8px; font-family:arial; font-size:11pt; width:65px; height:17px; text-align:center; background-color:#ccffcc; color:red; border:1px solid gray; border-radius:3px; }
+#tally { position:absolute; right:50px; top:8px; font-family:arial; font-size:11pt; width:25px; height:17px; text-align:center; background-color:#ccffcc; color:red; border:1px solid gray; border-radius:3px; }
+#msgbox { position:absolute; left:483px; top:235px; width:330px; height:200px; border:1px solid gray; border-radius:10px; background-color:lightblue; overflow:hidden; cursor:default; display:none; }
+#topbar { position:absolute; left:0px; top:0px; width:100%; height:18px; background-color:orange; }
+#info { position:absolute; left:2px; top:18px; width:314px; height:168px; background-color:ivory;border:1px solid #ccc; border-bottom-left-radius:7px; border-bottom-right-radius:7px; font-family:arial; font-size:11pt; padding:5px; }
+#reg { position:absolute; left:35px; top:60px; width:280px; height:130px; font-family:arial; font-size:11pt; display:none; }
+#bti { position:absolute; left:3pt; top:2px; font-family:arial; font-size:11pt; color:white; }
+</style>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="scripts/billiards.js"></script>
+
+</head>
+<body oncontextmenu="return false;">
+<img id="table" src="images/table.png">
+<div id="box" ></div>
+<canvas id="canvas">
+</canvas>
+<div id="clock">00:00</div>
+<div id="tally">0</div>
+<img id="rec" src="images/trophy.gif" title="records" style="position:absolute; right:27px; top:9px;">
+<img id="help" src="images/help.png" title="help" style="position:absolute; right:5px; top:6px;">
+<div id="msgbox">
+	<div id="topbar"><span id="bti"></span>
+		<img id="msgx" src="images/xg.png" style="position:absolute; top:1px;right:1px; width:16px;">
+	</div>
+	<div id="info"></div>
+	<div id="reg">
+		<img id="trophy" src="images/trophy_gold.png" style="position:absolute; top:0px; left:80px; width:80px;">
+		<div style="position:absolute; left:0px; top:90px;">Your name: 
+			<input type="text" id="usr" style="width:100px;" value="anonymous">
+		<button id="save">Save</button></div>
+	</div>
+</div>
+
+</body>
+</html>
